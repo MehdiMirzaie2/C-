@@ -37,6 +37,7 @@ int main(void)
 	PhoneBook	book;
 	std::string	input;
 	int			i = 0;
+	int			flag = 0;
 	int			option_val;
 
 	while (1){
@@ -57,6 +58,7 @@ int main(void)
 		else if (option_val == 3)
 			book.EXIT();
 		input.clear();
+		std::cin.clear();
 	}
 	return (0);
 }

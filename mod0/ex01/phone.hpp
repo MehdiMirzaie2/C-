@@ -22,6 +22,12 @@ class PhoneBook {
 			for (int i = length; i < 9; i++)
 				std::cout<<' ';
 		}
+		int isnumeric(std::string number){
+			for (int i = 0; i < number.length(); i++)
+				if (!(number[i] >= '0' && number[i] <= '9'))
+					return (0);
+			return (1);
+		}
 
 	public:
 		void ADD(int i){
@@ -43,7 +49,7 @@ class PhoneBook {
 			do {
 				std::cout << "enter number: ";
 				std::getline(std::cin, contacts[i].number);
-			} while (contacts[i].number.length() == 0);
+			} while (contacts[i].number.length() == 0 || isnumeric(contacts[i].number) == 0);
 
 			do {
 				std::cout << "enter darkest secret: ";
@@ -58,25 +64,25 @@ class PhoneBook {
 			int length;
 
 			for (int j = 0; j < i; j++){
-				std::cout<<contacts[j].index<<"         |";
+				std::cout<<"         "<<contacts[j].index<<'|';
 				if (contacts[j].firstname.length() > 10)
 					std::cout<<contacts[j].firstname.substr(0, 9)<<".|";
 				else{
-					std::cout<<contacts[j].firstname;
 					add_spaces(contacts[j].firstname.length());
-					std::cout<<'|';
+					std::cout<<contacts[j].firstname<<'|';
 				}
 				if (contacts[j].lastname.length() > 10)
 					std::cout<<contacts[j].lastname.substr(0, 9)<<".|";
 				else{
-					std::cout<<contacts[j].lastname;
 					add_spaces(contacts[j].lastname.length());
-					std::cout<<'|';
+					std::cout<<contacts[j].lastname<<'|';
 				}
 				if (contacts[j].nickname.length() > 10)
 					std::cout<<contacts[j].nickname.substr(0, 9)<<'.'<<std::endl;
-				else
+				else{
+					add_spaces(contacts[j].nickname.length());
 					std::cout<<contacts[j].nickname<<std::endl;
+				}
 			}
 
 			std::cout<<"which contact would you like: ";
