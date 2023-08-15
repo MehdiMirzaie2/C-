@@ -1,31 +1,17 @@
+
 NAME        := phonebook
 
-SRC_DIR     := src
-OBJ_DIR     := obj
-SRCS        := \
-	main.cpp          \
-
-SRCS        := $(SRCS:%=$(SRC_DIR)/%)
-OBJS        := $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-
+SRCS        := main.cpp
+OBJS        := main.o
 CC          := g++
 CFLAGS      := -Wall -Wextra -Werror -std=c++98
-CPPFLAGS    := -I include
-
 RM          := rm -f
 MAKEFLAGS   += --no-print-directory
-DIR_DUP     = mkdir -p $(@D)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
-	$(info CREATED $(NAME))
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(DIR_DUP)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
-	$(info CREATED $@)
 
 clean:
 	$(RM) $(OBJS)
@@ -38,4 +24,3 @@ re:
 	$(MAKE) all
 
 .PHONY: clean fclean re
-.SILENT:
