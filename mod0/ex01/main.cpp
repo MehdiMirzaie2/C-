@@ -37,14 +37,16 @@ int main(void)
 	PhoneBook	book;
 	std::string	input;
 	int			i = 0;
-	int			flag = 0;
+	int			flag = 1;
 	int			option_val;
 
 	while (1){
 		do {
-			std::cout << "ADD SEARCH EXIT: ";
+			if (flag)
+				std::cout << "ADD SEARCH EXIT: ";
 			std::getline(std::cin, input);
 			option_val = option(input);
+			flag = 1;
 		} while (input.length() == 0 || option_val == 0);
 
 		if (option_val == 1){
@@ -53,8 +55,10 @@ int main(void)
 			book.ADD(i);
 			i++;
 		}
-		else if (option_val == 2)
+		else if (option_val == 2){
 			book.SEARCH(i);
+			flag = 0;
+		}
 		else if (option_val == 3)
 			book.EXIT();
 		input.clear();

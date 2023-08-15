@@ -5,7 +5,7 @@
       "type": "lldb",
       "request": "launch",
       "name": "Debug",
-      "program": "${workspaceFolder}/book",
+      "program": "${workspaceFolder}/mod0/ex01/phonebook",
       "args": [],
       "cwd": "${workspaceFolder}"
     },
@@ -16,8 +16,8 @@
       "args": [],
       "stopAtEntry": true,
       "externalConsole": false,
-      "cwd": "/Users/mehdimirzaie/Desktop/cpp/ex01",
-      "program": "/Users/mehdimirzaie/Desktop/cpp/ex01/book",
+      "cwd": "/Users/mehdimirzaie/Desktop/cpp",
+      "program": "/Users/mehdimirzaie/Desktop/cpp/mod0/ex01/phonebook",
       "MIMode": "gdb"
     }
   ]

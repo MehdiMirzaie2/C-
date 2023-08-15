@@ -4,7 +4,7 @@
 		{
 			"label": "build",
 			"type": "shell",
-			"command": "cc main.c -g --track-allocations=yes"
+			"command": "cc challange.c -g --track-allocations=yes"
 		}
 	]
 }

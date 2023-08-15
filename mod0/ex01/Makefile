@@ -4,7 +4,7 @@ NAME        := phonebook
 SRCS        := main.cpp
 OBJS        := main.o
 CC          := g++
-CFLAGS      := -Wall -Wextra -Werror -std=c++98
+CFLAGS      := -Wall -Wextra -Werror -g -std=c++98
 RM          := rm -f
 MAKEFLAGS   += --no-print-directory
 
