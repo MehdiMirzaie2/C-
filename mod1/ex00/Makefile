@@ -1,11 +1,10 @@
-NAME        := megaphone
 
-SRCS        := megaphone.cpp
-OBJS        := megaphone.o
+NAME        := zombie
 
+SRCS        := main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+OBJS        := main.o Zombie.o newZombie.o randomChump.o
 CC          := c++
-CFLAGS      := -Wall -Wextra -Werror -std=c++98
-
+CFLAGS      := -Wall -Wextra -Werror -g -std=c++98
 RM          := rm -f
 MAKEFLAGS   += --no-print-directory
 
