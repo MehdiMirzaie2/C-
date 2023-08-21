@@ -1,20 +1,21 @@
 #include "Zombie.hpp"
 
-// void	init_zombie(void){
-// 	std::string name;
-
-// 	do{
-// 		std::cout<<"Name: ";
-// 		std::cin>>name;
-// 	}while(name.length() == 0);
-// 	randomChump(name);
-// }
-
 Zombie::Zombie(void){
-	do{
-		std::cout<<"Name: ";
-		std::cin>>name;
-	}while(name.length() == 0);
+	this->_name = "unnamed";
+}
 
-	randomChump(name);
+Zombie::Zombie(std::string name){
+	this->set_name(name);
+}
+
+Zombie::~Zombie(void){
+	std::cout<<this->_name <<": died"<<std::endl;
+}
+
+void Zombie::set_name(std::string name){
+	this->_name = name;
+}
+
+void Zombie::announce(void){
+	std::cout<<this->_name<<": BraiiiiiiinnnzzzZ...\n";
 }

@@ -5,23 +5,21 @@
 #include <iostream>
 
 class Zombie{
-	private:
-		std::string name;
 	public:
 
-		Zombie(void);
+		void set_name(std::string name);
 
-		void setter(const std::string& newName){
-			name = newName;
-		}
-		void announce(void){
-			std::cout<<name<<": "<<"BraiiiiiiinnnzzzZ..."<<std::endl;
-		}
-		~Zombie();
+		void announce(void);
+		
+		Zombie(void);
+		Zombie(std::string name);
+		~Zombie(void);
+
+	private:
+		std::string _name;
 };
 
 Zombie*	newZombie(std::string name);
 void	randomChump(std::string name);
-void	init_zombie(void);
 
 #endif
